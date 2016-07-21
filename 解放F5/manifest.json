@@ -1,0 +1,22 @@
+﻿{ 
+  "name":"解放F5", 
+  "version":"1.0", 
+  "manifest_version":2, 
+  "description":"监听文件修改后刷新页面，解决修改代码后还要进行刷新的问题", 
+  "browser_action":{ 
+    "default_icon":"icon32.png",
+	"default_popup": "popup.html"
+  },
+  "icons":{
+	"128": "icon32.png"
+  },  
+  "permissions":[     
+    "http://localhost:*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:*/*"],
+      "js": ["LiveReload.js"]
+    }
+  ]
+}
