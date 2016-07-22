@@ -54,8 +54,8 @@ namespace LiveReload
             if (tmpTime.ToString("yyyy-MM-dd HH:mm:ss") != DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
             {
                 tmpTime = DateTime.Now;
-                helper.SendMsg("reload");
-                AddMsg("重新加载页的消息发送成功！");
+
+                AddMsg("重新加载页的消息发送" + (helper.SendMsg("reload") ? "成功" : "失败") + "！");
             }
         }
 
@@ -99,6 +99,13 @@ namespace LiveReload
             {
                 MessageBox.Show("文件夹路径正确！");
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+
+            System.Environment.Exit(0);
         }
     }
 }

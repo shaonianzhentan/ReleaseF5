@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPort = new System.Windows.Forms.TextBox();
             this.btnTing = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtFolderName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPort = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtPort);
             this.panel1.Controls.Add(this.btnTing);
@@ -64,9 +66,36 @@
             this.panel1.Size = new System.Drawing.Size(663, 44);
             this.panel1.TabIndex = 1;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(579, 12);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 8;
+            this.btnReset.Text = "重启";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(418, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 12);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "端口:";
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(459, 13);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(36, 21);
+            this.txtPort.TabIndex = 6;
+            this.txtPort.Text = "23333";
+            // 
             // btnTing
             // 
-            this.btnTing.Location = new System.Drawing.Point(577, 12);
+            this.btnTing.Location = new System.Drawing.Point(501, 12);
             this.btnTing.Name = "btnTing";
             this.btnTing.Size = new System.Drawing.Size(75, 23);
             this.btnTing.TabIndex = 5;
@@ -88,7 +117,7 @@
             // 
             this.txtFolderName.Location = new System.Drawing.Point(91, 13);
             this.txtFolderName.Name = "txtFolderName";
-            this.txtFolderName.Size = new System.Drawing.Size(397, 21);
+            this.txtFolderName.Size = new System.Drawing.Size(324, 21);
             this.txtFolderName.TabIndex = 3;
             // 
             // panel2
@@ -99,23 +128,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(663, 583);
             this.panel2.TabIndex = 2;
-            // 
-            // txtPort
-            // 
-            this.txtPort.Location = new System.Drawing.Point(535, 13);
-            this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(36, 21);
-            this.txtPort.TabIndex = 6;
-            this.txtPort.Text = "23333";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(494, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "端口:";
             // 
             // Form1
             // 
@@ -146,6 +158,7 @@
         private System.Windows.Forms.Button btnTing;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPort;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
