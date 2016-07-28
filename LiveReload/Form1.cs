@@ -13,17 +13,25 @@ namespace LiveReload
     public partial class Form1 : Form
     {
         TcpHelper helper = new TcpHelper();
+        string configFile;
+
+        bool IsReset = false;
 
         public Form1()
         {
+            configFile = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments) + "/LiveReload.cfg";
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
+            if(File.Exists(configFile)) txtFolderName.Text = File.ReadAllText(configFile);
 
-                      
+            this.FormClosed += (ss, ee) =>
+            {
+                if(IsReset == false) System.Environment.Exit(0);
+            };
         }
 
         private void p_Changed(object sender, FileSystemEventArgs e)
@@ -94,17 +102,19 @@ namespace LiveReload
                     AddMsg("打开" + port + "端口监听：");
                     txtPort.Enabled = false;
                 }
+
+                File.WriteAllText(configFile, folder);
             }
             else
             {
-                MessageBox.Show("文件夹路径正确！");
+                MessageBox.Show("文件夹路径不正确！");
             }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            IsReset = true;
             Application.Restart();
-
             System.Environment.Exit(0);
         }
     }
