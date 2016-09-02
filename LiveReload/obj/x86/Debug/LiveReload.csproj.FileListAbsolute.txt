@@ -5,3 +5,4 @@ c:\users\administrator\documents\visual studio 2010\Projects\LiveReload\LiveRelo
 c:\users\administrator\documents\visual studio 2010\Projects\LiveReload\LiveReload\bin\Debug\解放F5.pdb
 c:\users\administrator\documents\visual studio 2010\Projects\LiveReload\LiveReload\obj\x86\Debug\解放F5.exe
 c:\users\administrator\documents\visual studio 2010\Projects\LiveReload\LiveReload\obj\x86\Debug\解放F5.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\LiveReload\LiveReload\obj\x86\Debug\LiveReload.csprojResolveAssemblyReference.cache

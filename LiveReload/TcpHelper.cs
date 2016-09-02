@@ -129,6 +129,11 @@ namespace LiveReload
 				info.Id = client.RemoteEndPoint;
 				info.handle = client.Handle;
 				info.buffer = buffer;
+
+                //只保留最后一个
+                this.clientPool.Clear();
+
+
 				//把客户端存入clientPool
 				this.clientPool.Add (client, info);
 				Console.WriteLine (string.Format ("Client {0} connected", client.RemoteEndPoint));
